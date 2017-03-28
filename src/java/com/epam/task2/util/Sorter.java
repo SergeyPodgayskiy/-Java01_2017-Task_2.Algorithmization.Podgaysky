@@ -12,10 +12,8 @@ public final class Sorter {
     }
 
     public static void selectionSort(int[] array) {
-        int min;
-
         for (int i = 0; i < array.length - 1; i++) {
-            min = i;
+            int min = i;
             for (int j = i + 1; j < array.length; j++) {
                 if (array[j] < array[min]) {
                     min = j;
@@ -26,12 +24,10 @@ public final class Sorter {
     }
 
     public static void insertionSort(int[] array) {
-        int temp;
-        int j;
-
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] > array[i + 1]) {
-                temp = array[i + 1];
+                int j;
+                int temp = array[i + 1];
                 array[i + 1] = array[i];
                 j = i;
                 while (j > 0 && temp < array[j - 1]) {
@@ -72,10 +68,8 @@ public final class Sorter {
     }
 
     public static void quickSort(int[] array, int left, int right) {
-        int index;
-
         if (isParametersValid(array, left, right)) {
-            index = partition(array, left, right);
+            int index = partition(array, left, right);
             if (left < index - 1) {
                 quickSort(array, left, index - 1);
             }
@@ -86,15 +80,10 @@ public final class Sorter {
     }
 
     private static int partition(int[] array, int left, int right) {
-        int middle;
-        int pivot;
-        int i;
-        int j;
-
-        middle = left + (right - left) / 2;
-        pivot = array[middle];
-        i = left;
-        j = right;
+        int middle = left + (right - left) / 2;
+        int pivot = array[middle];
+        int i = left;
+        int j = right;
 
         while (i <= j) {
             while (array[i] < pivot) {
